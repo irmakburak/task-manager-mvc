@@ -23,6 +23,11 @@
 
     <button type="submit">Login</button>
 </form>
+    <br>
+<p>
+    Don't have an account?
+    <a href="index.php?url=auth/register">Register</a>
+</p>
 
 </body>
 </html>

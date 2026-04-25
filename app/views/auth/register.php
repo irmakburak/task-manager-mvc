@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Register</title>
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
 
@@ -24,6 +25,11 @@
 
     <button type="submit">Register</button>
 </form>
+    <br>
+<p>
+    Already have an account?
+    <a href="index.php?url=auth/login">Login</a>
+</p>
 
 </body>
 </html>
