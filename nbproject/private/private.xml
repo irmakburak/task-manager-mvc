@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/task_manager/index.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/core/Database.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/core/Controller.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/core/Router.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/controllers/TaskController.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/views/tasks/index.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/models/User.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/controllers/AuthController.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/views/auth/register.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/views/auth/login.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/models/Task.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/views/tasks/create.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/app/views/tasks/edit.php</file>
+            <file>file:/C:/xampp/htdocs/task_manager/public/css/style.css</file>
+            <file>file:/C:/xampp/htdocs/task_manager/README.md</file>
+        </group>
+    </open-files>
+</project-private>

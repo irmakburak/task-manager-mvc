@@ -124,4 +124,27 @@ class Task
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function countAll($userId)
+{
+    $sql = "SELECT COUNT(*) FROM tasks WHERE user_id = :user_id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute([":user_id" => $userId]);
+    return $stmt->fetchColumn();
+}
+
+public function countCompleted($userId)
+{
+    $sql = "SELECT COUNT(*) FROM tasks WHERE user_id = :user_id AND status = 'completed'";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute([":user_id" => $userId]);
+    return $stmt->fetchColumn();
+}
+
+public function countPending($userId)
+{
+    $sql = "SELECT COUNT(*) FROM tasks WHERE user_id = :user_id AND status = 'pending'";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute([":user_id" => $userId]);
+    return $stmt->fetchColumn();
+}
 }

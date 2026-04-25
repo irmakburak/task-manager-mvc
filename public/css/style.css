@@ -10,11 +10,13 @@ body {
     color: #1f2937;
 }
 
+/* HEADINGS */
 h1 {
     margin-bottom: 20px;
     color: #111827;
 }
 
+/* LINKS */
 a {
     color: #2563eb;
     font-weight: bold;
@@ -26,16 +28,19 @@ a:hover {
     text-decoration: underline;
 }
 
+/* FORM & CARDS */
 form,
-.task-card {
+.task-card,
+.stats {
     background: #ffffff;
     padding: 22px;
     border-radius: 14px;
-    max-width: 650px;
+    max-width: 700px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     margin-bottom: 20px;
 }
 
+/* INPUTS */
 input,
 textarea,
 select,
@@ -52,6 +57,7 @@ textarea {
     min-height: 100px;
 }
 
+/* BUTTON */
 button {
     background: #2563eb;
     color: white;
@@ -66,6 +72,7 @@ button:hover {
     transform: translateY(-1px);
 }
 
+/* TASK CARD */
 .task-card h3 {
     margin-top: 0;
     color: #111827;
@@ -75,12 +82,42 @@ button:hover {
     margin: 8px 0;
 }
 
+/* STATS DASHBOARD */
+.stats {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.card p {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* SEPARATORS */
 hr {
     border: none;
     border-top: 1px solid #e5e7eb;
     margin: 25px 0;
 }
 
+/* MESSAGES */
 .error {
     color: #dc2626;
     font-weight: bold;

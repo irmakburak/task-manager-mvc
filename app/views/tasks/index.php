@@ -10,11 +10,31 @@
 
 <p>Welcome, <?php echo $_SESSION["user"]; ?></p>
 
+<!-- DASHBOARD STATS -->
+<div class="stats">
+    <div class="card">
+        <h3>Total Tasks</h3>
+        <p><?php echo $total; ?></p>
+    </div>
+
+    <div class="card">
+        <h3>Completed</h3>
+        <p><?php echo $completed; ?></p>
+    </div>
+
+    <div class="card">
+        <h3>Pending</h3>
+        <p><?php echo $pending; ?></p>
+    </div>
+</div>
+
+<!-- ACTION BUTTONS -->
 <a href="index.php?url=auth/logout">Logout</a>
 <a href="index.php?url=task/create">Create New Task</a>
 
 <br><br>
 
+<!-- FILTER FORM -->
 <form method="get" action="index.php">
     <input type="hidden" name="url" value="task/index">
 
@@ -39,6 +59,7 @@
 
 <hr>
 
+<!-- TASK LIST -->
 <?php if (empty($tasks)): ?>
     <p>No tasks found.</p>
 <?php else: ?>
@@ -50,9 +71,9 @@
 
             <p><?php echo $task["description"]; ?></p>
 
+            <!-- STATUS -->
             <p>
                 Status:
-
                 <?php if ($task["status"] == "completed"): ?>
                     <span style="color:green; font-weight:bold;">Completed</span>
                 <?php else: ?>
@@ -60,9 +81,9 @@
                 <?php endif; ?>
             </p>
 
+            <!-- PRIORITY -->
             <p>
                 Priority:
-
                 <?php if ($task["priority"] == "high"): ?>
                     <span style="color:red; font-weight:bold;">High</span>
 

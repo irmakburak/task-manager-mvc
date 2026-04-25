@@ -26,11 +26,19 @@ class TaskController extends Controller
             $priority
         );
 
+        // 🔥 TASK STATS (NEW)
+        $total = $taskModel->countAll($_SESSION["user_id"]);
+        $completed = $taskModel->countCompleted($_SESSION["user_id"]);
+        $pending = $taskModel->countPending($_SESSION["user_id"]);
+
         $this->view("tasks/index", [
             "tasks" => $tasks,
             "search" => $search,
             "status" => $status,
-            "priority" => $priority
+            "priority" => $priority,
+            "total" => $total,
+            "completed" => $completed,
+            "pending" => $pending
         ]);
     }
 
@@ -42,6 +50,7 @@ class TaskController extends Controller
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
             $title = htmlspecialchars($_POST["title"]);
             $description = htmlspecialchars($_POST["description"]);
             $priority = $_POST["priority"];
@@ -95,6 +104,7 @@ class TaskController extends Controller
         $taskModel = $this->model("Task");
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
             $title = htmlspecialchars($_POST["title"]);
             $description = htmlspecialchars($_POST["description"]);
             $priority = $_POST["priority"];
