@@ -1,31 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #f4f6f8;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
     margin: 0;
-    padding: 30px;
-    color: #222;
+    padding: 40px;
+    color: #1f2937;
 }
 
 h1 {
-    color: #1f2937;
+    margin-bottom: 20px;
+    color: #111827;
 }
 
 a {
     color: #2563eb;
+    font-weight: bold;
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-form {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 500px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+form,
+.task-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    max-width: 650px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
 }
 
 input,
@@ -33,35 +41,52 @@ textarea,
 select,
 button {
     width: 100%;
-    padding: 10px;
-    margin-top: 8px;
-    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 100px;
 }
 
 button {
     background: #2563eb;
     color: white;
     border: none;
-    border-radius: 6px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
     background: #1d4ed8;
+    transform: translateY(-1px);
 }
 
-.task-card {
-    background: white;
-    padding: 18px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.task-card h3 {
+    margin-top: 0;
+    color: #111827;
+}
+
+.task-card p {
+    margin: 8px 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 25px 0;
 }
 
 .error {
-    color: red;
+    color: #dc2626;
+    font-weight: bold;
 }
 
 .success {
-    color: green;
+    color: #16a34a;
+    font-weight: bold;
 }

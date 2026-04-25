@@ -92,30 +92,36 @@ class Task
             ":user_id" => $userId
         ]);
     }
-    public function searchAndFilter($userId, $search, $status)
-{
-    $sql = "SELECT * FROM " . $this->table . " 
-            WHERE user_id = :user_id";
 
-    $params = [
-        ":user_id" => $userId
-    ];
+    public function searchAndFilter($userId, $search, $status, $priority)
+    {
+        $sql = "SELECT * FROM " . $this->table . " 
+                WHERE user_id = :user_id";
 
-    if (!empty($search)) {
-        $sql .= " AND title LIKE :search";
-        $params[":search"] = "%" . $search . "%";
+        $params = [
+            ":user_id" => $userId
+        ];
+
+        if (!empty($search)) {
+            $sql .= " AND title LIKE :search";
+            $params[":search"] = "%" . $search . "%";
+        }
+
+        if (!empty($status)) {
+            $sql .= " AND status = :status";
+            $params[":status"] = $status;
+        }
+
+        if (!empty($priority)) {
+            $sql .= " AND priority = :priority";
+            $params[":priority"] = $priority;
+        }
+
+        $sql .= " ORDER BY created_at DESC";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute($params);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    if (!empty($status)) {
-        $sql .= " AND status = :status";
-        $params[":status"] = $status;
-    }
-
-    $sql .= " ORDER BY created_at DESC";
-
-    $stmt = $this->conn->prepare($sql);
-    $stmt->execute($params);
-
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
 }

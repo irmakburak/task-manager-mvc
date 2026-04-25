@@ -17,17 +17,20 @@ class TaskController extends Controller
 
         $search = $_GET["search"] ?? "";
         $status = $_GET["status"] ?? "";
+        $priority = $_GET["priority"] ?? "";
 
         $tasks = $taskModel->searchAndFilter(
             $_SESSION["user_id"],
             $search,
-            $status
+            $status,
+            $priority
         );
 
         $this->view("tasks/index", [
             "tasks" => $tasks,
             "search" => $search,
-            "status" => $status
+            "status" => $status,
+            "priority" => $priority
         ]);
     }
 
@@ -39,7 +42,6 @@ class TaskController extends Controller
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
             $title = htmlspecialchars($_POST["title"]);
             $description = htmlspecialchars($_POST["description"]);
             $priority = $_POST["priority"];
@@ -77,7 +79,6 @@ class TaskController extends Controller
         }
 
         $taskModel = $this->model("Task");
-
         $taskModel->delete($id, $_SESSION["user_id"]);
 
         header("Location: index.php?url=task/index");
@@ -94,7 +95,6 @@ class TaskController extends Controller
         $taskModel = $this->model("Task");
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
             $title = htmlspecialchars($_POST["title"]);
             $description = htmlspecialchars($_POST["description"]);
             $priority = $_POST["priority"];
